@@ -57,4 +57,4 @@ Route::view('/about','about')->name('about');
 Route::get('/portfolio','App\Http\Controllers\PortfolioController@index')->name('portfolio');
 Route::view('/contactt','contactt')->name('contactt');
 
-
+Route::post('contactt','App\Http\Controllers\MessagesController@store');
