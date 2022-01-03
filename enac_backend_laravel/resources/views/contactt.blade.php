@@ -9,6 +9,7 @@ Contactanos
 
 @section('content')
     <h1>estoy en la pagina de contacto</h1>
+    @include('components.session-status')
     <Form method="POST" action="{{route('contactt')}}">
         {{-- obtener seguridad contra los ataques xss --}}
         @csrf

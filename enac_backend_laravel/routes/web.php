@@ -55,6 +55,18 @@ Route::get('/inicio',function(){
 // Route::view('/','home')->('home'); con esta simple linea traigo la vista(se usa para paginas con poca logica)
 Route::view('/about','about')->name('about');
 Route::get('/portfolio','App\Http\Controllers\PortfolioController@index')->name('portfolio');
+Route::get('/portfolio/crear','App\Http\Controllers\PortfolioController@create')->name('create');
+Route::patch('/portfolio/{proyect}','App\Http\Controllers\PortfolioController@update')->name('update');
+Route::get('/portfolio/{proyect}/editar','App\Http\Controllers\PortfolioController@edit')->name('edit');
+
+
+
+Route::post('/portfolio','App\Http\Controllers\PortfolioController@store')->name('store');
+
+Route::delete('/portfolio/{proyect}','App\Http\Controllers\PortfolioController@destroy')->name('destroy');
+
+Route::get('/portfolio/{id}','App\Http\Controllers\PortfolioController@show')->name('portfolio.show');
+
 Route::view('/contactt','contactt')->name('contactt');
 
 Route::post('contactt','App\Http\Controllers\MessagesController@store');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Iluminate\Support\Facades\Mail;
 
 class MessagesController extends Controller
 {
@@ -18,7 +19,11 @@ class MessagesController extends Controller
             'subject.required'=>'Su asunto es obligatorio',
             'content.required'=>'el contenido es obligatorio',
         ]);
-        return request();
+
+        //enviar correo electronico
+        // Mail::to('kano.verapad@gmail.com')->send();
+
+        return back()->with('status','recibimos tu mensaje, en menos de 24 horas nos pondremos en contacto ;)');
 
       
     }
