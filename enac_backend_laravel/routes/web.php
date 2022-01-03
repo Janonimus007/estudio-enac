@@ -70,3 +70,7 @@ Route::get('/portfolio/{id}','App\Http\Controllers\PortfolioController@show')->n
 Route::view('/contactt','contactt')->name('contactt');
 
 Route::post('contactt','App\Http\Controllers\MessagesController@store');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
