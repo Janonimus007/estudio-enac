@@ -71,6 +71,6 @@ Route::view('/contactt','contactt')->name('contactt');
 
 Route::post('contactt','App\Http\Controllers\MessagesController@store');
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
